@@ -57,6 +57,9 @@ group :development, :test do
 
   # Test coverage - https://github.com/simplecov-ruby/simplecov
   gem 'simplecov'
+
+  # Linter - https://github.com/rubocop/rubocop-rails
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
