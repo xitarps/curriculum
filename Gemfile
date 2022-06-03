@@ -60,6 +60,11 @@ group :development, :test do
 
   # Linter - https://github.com/rubocop/rubocop-rails
   gem 'rubocop-rails', require: false
+
+  # Security tools
+  gem 'brakeman'
+  gem 'bundler-audit'
+  gem 'ruby_audit'
 end
 
 group :development do
