@@ -14,7 +14,6 @@ AllCops:
     - 'config/environments/*'
     - 'config/initializers/*'                               #remove if necessary
     - 'config/puma.rb'
-    - 'config/routes.rb'                                    #remove if necessary
     - 'config/spring.rb'
     - 'Gemfile'
     - 'Rakefile'
