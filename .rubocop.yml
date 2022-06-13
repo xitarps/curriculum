@@ -15,11 +15,17 @@ AllCops:
     - 'config/initializers/*'                               #remove if necessary
     - 'config/puma.rb'
     - 'config/spring.rb'
+    - 'db/schema.rb'
     - 'Gemfile'
     - 'Rakefile'
     - 'spec/spec_helper.rb'
     - 'spec/rails_helper.rb'
     - 'vendor/**/*'
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - 'spec/**/*'
 
 # From .rubocop_todo.yml
 Layout/EmptyLineAfterGuardClause:
