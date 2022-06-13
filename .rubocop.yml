@@ -26,6 +26,15 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - 'spec/**/*'
+Naming/MemoizedInstanceVariableName:
+  Enabled: true
+  Exclude:
+   - 'app/helpers/user_authentication_helper.rb'
+
+Style/GuardClause:
+  Enabled: true
+  Exclude:
+   - 'app/helpers/user_authentication_helper.rb'
 
 # From .rubocop_todo.yml
 Layout/EmptyLineAfterGuardClause:
