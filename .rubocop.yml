@@ -36,6 +36,11 @@ Style/GuardClause:
   Exclude:
    - 'app/helpers/user_authentication_helper.rb'
 
+Metrics/AbcSize:
+  Enabled: true
+  Exclude:
+   - 'app/controllers/sessions_controller.rb'
+
 # From .rubocop_todo.yml
 Layout/EmptyLineAfterGuardClause:
   Enabled: true
