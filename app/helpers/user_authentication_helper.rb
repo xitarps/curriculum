@@ -18,6 +18,6 @@ module UserAuthenticationHelper
   end
 
   def redirect_if_already_signed_in
-    return redirect_to root_path, status: :ok if user_signed_in?
+    redirect_to root_path, status: :temporary_redirect if user_signed_in?
   end
 end

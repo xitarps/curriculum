@@ -1,0 +1,17 @@
+<h2>Sign in</h2>
+
+<%= form_with model: @session, url: signin_path, data: {turbo: false} do |f| %>
+  <p>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit 'Sign in' %>
+  </p>
+<% end %>
