@@ -52,6 +52,11 @@ RSpec.describe User, type: :model do
                                       password: '123456')
         expect(subject.valid?).to be_falsy
       end
+      it 'when there\'s one user already registered' do
+        described_class.create(email: 'a@a.com', password: '123456')
+        subject = described_class.new(email: 'b@b.com', password: '123456')
+        expect(subject.valid?).to be_falsy
+      end
     end
   end
 end
