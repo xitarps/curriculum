@@ -71,6 +71,20 @@ RSpec.describe UserAuthenticationHelper do
       end
     end
   end
+  describe 'any_user_already_registered? method' do
+    context 'return false' do
+      it 'when theres none user already registered' do
+        expect(any_user_already_registered?).to be_falsey
+      end
+    end
+    context 'return true' do
+      it 'when theres any user already registered' do
+        @user = user
+
+        expect(any_user_already_registered?).to be_truthy
+      end
+    end
+  end
   describe 'redirect_if_already_signed_in method' do
     include_context 'redirect_to'
     context 'doesen\'t redirect ' do
@@ -83,6 +97,22 @@ RSpec.describe UserAuthenticationHelper do
         @user = user
 
         expect(redirect_if_already_signed_in).to eql('/')
+      end
+    end
+  end
+
+  describe 'redirect_if_theres_already_a_user_registered method' do
+    include_context 'redirect_to'
+    context 'doesen\'t redirect ' do
+      it 'when any_user_already_registered? returns false' do
+        expect(redirect_if_theres_already_a_user_registered).not_to eql('/')
+      end
+    end
+    context 'redirect ' do
+      it 'when any_user_already_registered? returns true' do
+        @user = user
+
+        expect(redirect_if_theres_already_a_user_registered).to eql('/')
       end
     end
   end

@@ -18,6 +18,14 @@ module UserAuthenticationHelper
   end
 
   def redirect_if_already_signed_in
-    redirect_to root_path, status: :temporary_redirect if user_signed_in?
+    redirect_to root_path, status: 307 if user_signed_in?
+  end
+
+  def any_user_already_registered?
+    User.any?
+  end
+
+  def redirect_if_theres_already_a_user_registered
+    redirect_to root_path, status: 307 if any_user_already_registered?
   end
 end
