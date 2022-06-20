@@ -9,11 +9,11 @@ class User < ApplicationRecord
   validates_presence_of :password, :email, message: 'can\'t be blank'
   mail_regex = /\A(\S+)@(.+)\.(\S+)\z/
   validates_format_of :email, with: mail_regex, message: 'is invalid'
+  validate lambda {
+    errors.add(:user, 'already registered any') if any_user_already_registered?
+  }, on: :create
   # before_create lambda {
   #   errors.add(:user, 'already registered one')
   #   raise 'ERROR'
   # }, if: :any_user_already_registered?
-  validate lambda {
-    errors.add(:user, 'already registered any') if any_user_already_registered?
-  }, on: :create
 end
